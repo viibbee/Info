@@ -64,7 +64,7 @@
     /* --- Контейнер сертификатов --- */
     main.container {
       width: 100%;
-      max-width: 480px;
+      max-width: 350px; /* уменьшили максимальную ширину */
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr;
@@ -76,7 +76,7 @@
     .card {
       background: linear-gradient(145deg, #2980b9, #3f8dd1);
       border-radius: 24px;
-      padding: 20px 25px;
+      padding: 15px 20px; /* уменьшили padding */
       box-shadow:
         0 8px 15px rgba(0, 0, 0, 0.3),
         inset 0 2px 6px rgba(255, 255, 255, 0.15),
@@ -88,13 +88,13 @@
       flex-direction: column;
       justify-content: space-between;
 
-      height: 300px;
+      height: 220px; /* уменьшили высоту */
       box-sizing: border-box;
     }
 
     .card h2 {
-      margin: 0 0 15px 0;
-      font-size: 1.3rem;
+      margin: 0 0 12px 0; /* уменьшили отступ */
+      font-size: 1.1rem;  /* уменьшили размер шрифта */
       font-weight: 600;
       color: #e3f2fd;
       text-shadow: 0 1px 2px rgba(0,0,0,0.4);
@@ -103,10 +103,10 @@
     .card ul {
       list-style: none;
       padding-left: 0;
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0; /* уменьшили отступ */
       color: #d0e6fb;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: 0.85rem; /* уменьшили размер шрифта */
+      line-height: 1.4;
       flex-grow: 1;
       overflow-y: auto;
     }
