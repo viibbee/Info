@@ -99,9 +99,16 @@
       transform: scale(1.1);
     }
 
-    .icon img {
-      width: 50px;
-      height: 50px;
+    .icon svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+
+    .icon-label {
+      color: white;
+      font-size: 0.9em;
+      margin-top: 10px;
     }
 
     .modal {
@@ -125,6 +132,7 @@
       width: 80%;
       max-width: 600px;
       overflow-y: auto;
+      position: relative;
     }
 
     .modal-content img {
@@ -189,16 +197,24 @@
   <h1>Иконки Установщиков</h1>
   <div class="icon-container">
     <div class="icon" onclick="openModal('gbox')">
-      <img src="path-to-your-icons/gbox-logo.png" alt="Gbox">
+      <!-- Заглушка иконки -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0L24 6L12 12L0 6L12 0Z"></path></svg>
+      <div class="icon-label">Gbox</div>
     </div>
     <div class="icon" onclick="openModal('esign')">
-      <img src="path-to-your-icons/esign-logo.png" alt="ESign">
+      <!-- Заглушка иконки -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0L24 6L12 12L0 6L12 0Z"></path></svg>
+      <div class="icon-label">ESign</div>
     </div>
     <div class="icon" onclick="openModal('feather')">
-      <img src="path-to-your-icons/feather-logo.png" alt="Feather">
+      <!-- Заглушка иконки -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0L24 6L12 12L0 6L12 0Z"></path></svg>
+      <div class="icon-label">Feather</div>
     </div>
     <div class="icon" onclick="openModal('scarlet')">
-      <img src="path-to-your-icons/scarlet-logo.png" alt="Scarlet">
+      <!-- Заглушка иконки -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0L24 6L12 12L0 6L12 0Z"></path></svg>
+      <div class="icon-label">Scarlet</div>
     </div>
   </div>
 
@@ -252,13 +268,12 @@
 
   <script>
     function openModal(id) {
-      document.getElementById(id + '-modal').style.display = 'flex';
+      document.getElementById(`${id}-modal`).style.display = 'flex';
     }
 
     function closeModal(id) {
-      document.getElementById(id + '-modal').style.display = 'none';
+      document.getElementById(`${id}-modal`).style.display = 'none';
     }
   </script>
-
 </body>
 </html>
