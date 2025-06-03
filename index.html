@@ -1,3 +1,4 @@
+теперь нам нужно сделать кнопку (Как получить сертификат) перед Инструкция по установке сертификата при нажатии на которую будет открываться такое же окно инструкции в Scarlet\Gbox\ESign
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,16 +9,18 @@
     /* --- Общий стиль --- */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       background: linear-gradient(135deg, #7ec8f5, #4a90e2);
       color: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       box-sizing: border-box;
-      padding-top: 70px;
+      padding-top: 70px; /* Отступ под шапку */
     }
 
+    /* --- Шапка --- */
     header {
       position: fixed;
       top: 0;
@@ -59,18 +62,21 @@
       white-space: nowrap;
     }
 
+    /* --- Текст под шапкой --- */
     .intro-text {
-      max-width: 400px;
-      margin: 1px auto 30px auto;
-      padding: 0 15px;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: #f0f9ff;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-      user-select: text;
-      white-space: pre-line;
-    }
+  max-width: 400px;
+  margin: 1px auto 30px auto;
+  padding: 0 15px;
+  font-size: 1.15rem; /* увеличен размер */
+  line-height: 1.6;
+  color: #f0f9ff; /* более светлый, чуть ярче */
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.7); /* легкая тень для контраста */
+  user-select: text;
+  white-space: pre-line; /* чтобы переносы строк работали */
+}
 
+    /* --- Контейнер сертификатов --- */
     main.container {
       width: 100%;
       max-width: 350px;
@@ -81,18 +87,22 @@
       padding-bottom: 40px;
     }
 
+    /* --- Карточки --- */
     .card {
       background: linear-gradient(145deg, #2980b9, #3f8dd1);
       border-radius: 24px;
       padding: 15px 20px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3),
-                  inset 0 2px 6px rgba(255, 255, 255, 0.15),
-                  inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.3),
+        inset 0 2px 6px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       height: 220px;
       box-sizing: border-box;
     }
@@ -116,6 +126,7 @@
       overflow-y: auto;
     }
 
+    /* --- Кнопки --- */
     .buy-button {
       display: block;
       width: 100%;
@@ -137,63 +148,6 @@
       box-shadow: 0 4px 8px rgba(0, 90, 190, 0.7);
       transform: translateY(2px);
     }
-
-    /* Кнопка инструкции */
-    .instruction-button {
-      display: block;
-      margin: 30px auto 10px;
-      background: #fff;
-      color: #2f80ed;
-      font-weight: bold;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 24px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .instruction-button:active {
-      transform: scale(0.98);
-    }
-
-    /* Модальное окно */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      color: #000;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 480px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: #000;
-    }
   </style>
 </head>
 <body>
@@ -212,60 +166,64 @@
 </div>
 
 <main class="container">
-  <!-- Сертификаты -->
-  <article class="card"><h2>Обычный сертификат — 799₽</h2><ul><li>Сертификат на 1 год</li><li>Срок изготовления 1–4 дня</li><li>Подходит для всех IPA</li></ul><a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank">Купить</a></article>
-  <article class="card"><h2>Моментальный сертификат — 1399₽</h2><ul><li>Сертификат на 1 год</li><li>Срок изготовления 1–5 минут</li><li>Подходит для всех IPA</li></ul><a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank">Купить</a></article>
-  <article class="card"><h2>Сертификат iPad — 699₽</h2><ul><li>Сертификат на 1 год</li><li>Срок изготовления 1 минута – 4 дня</li><li>Подходит для всех IPA</li></ul><a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank">Купить</a></article>
-  <article class="card"><h2>Супермоментальный сертификат — 1699₽</h2><ul><li>Сертификат на 1 год</li><li>Срок изготовления 1–5 минут</li><li>Снимает бан с UDID</li><li>Подходит для всех IPA</li></ul><a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank">Купить</a></article>
+
+  <article class="card" tabindex="0">
+    <h2>Обычный сертификат — 799₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–4 дня</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Моментальный сертификат — 1399₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–5 минут</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Сертификат iPad — 699₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1 минута – 4 дня</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Супермоментальный сертификат — 1699₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–5 минут</li>
+      <li>Снимает бан с UDID</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
 </main>
-
-<!-- Кнопка: Как получить сертификат -->
-<button class="instruction-button" onclick="openModal('howto')">Как получить сертификат</button>
-
 <h2 style="text-align:center; font-size: 1.2rem; margin-top: 20px; color: #e3f2fd; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Инструкция по установке сертификата</h2>
 <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0;">
   <div onclick="openModal('scarlet')" style="cursor: pointer; text-align: center;">
-    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/scarlet.png" alt="Scarlet" style="width:60px; height:60px;"><br><span>Scarlet</span>
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/scarlet.png" alt="Scarlet" style="width:60px; height:60px;"><br>
+    <span>Scarlet</span>
   </div>
   <div onclick="openModal('gbox')" style="cursor: pointer; text-align: center;">
-    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/gbox.png" alt="Gbox" style="width:60px; height:60px;"><br><span>Gbox</span>
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/gbox.png" alt="Gbox" style="width:60px; height:60px;"><br>
+    <span>Gbox</span>
   </div>
   <div onclick="openModal('esign')" style="cursor: pointer; text-align: center;">
-    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/esign.png" alt="ESign" style="width:60px; height:60px;"><br><span>ESign</span>
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/esign.png" alt="ESign" style="width:60px; height:60px;"><br>
+    <span>ESign</span>
   </div>
 </div>
-
-<!-- Модальное окно "Как получить сертификат" -->
-<div id="howto" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('howto')">&times;</span>
-    <h3>Как получить сертификат</h3>
-    <p>1. Выберите подходящий сертификат.<br>
-    2. Нажмите "Купить" и перейдите в Telegram.<br>
-    3. Напишите продавцу и отправьте UDID устройства (инструкция будет дана).<br>
-    4. Дождитесь выпуска сертификата (1 минута – 4 дня).<br>
-    5. Установите сертификат через Scarlet, Gbox или ESign.</p>
-  </div>
-</div>
-
-<!-- JS: управление модалками -->
-<script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'block';
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  }
 
 <!-- Модальное окно -->
 <div id="instructionModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center;">
@@ -287,29 +245,20 @@
       html = `
         <h2>Инструкция: Scarlet</h2>
         <ol>
-          <li>1. Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке «Установлено».</li>
+          <li>Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке "Installed".</li>
           <img src="https://github.com/viibbee/Info/blob/main/scarlet1.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
 
-          <li>Оставшись на данной вкладке, нажмите на пару секунд кнопку, расположенную сверху справа</li>
+          <li>Оставшись на данной вкладке, нажмите на кнопку, которая располагается сверху справа.</li>
           <img src="https://github.com/viibbee/Info/blob/main/scarlet2.png?raw=true" alt="Шаг 2" style="width:100%; border-radius:8px; margin-top:10px;">
 
-          <li>В появившемся списке нажмите на "Manage Certs"</li>
+          <li>Файлы устройства откроются автоматически, остается лишь выбрать файл приложения (нажмите на файл).</li>
           <img src="https://github.com/viibbee/Info/blob/main/scarlet3.png?raw=true" alt="Шаг 3" style="width:100%; border-radius:8px; margin-top:10px;">
 
-          <li>В появившемся окне нажмите на "Import Cert"</li>
+          <li>Дождитесь окончания подписи файла.</li>
           <img src="https://github.com/viibbee/Info/blob/main/scarlet4.png?raw=true" alt="Шаг 4" style="width:100%; border-radius:8px; margin-top:10px;">
 
-          <li>Файлы устройства откроются автоматически, остается лишь выбрать файл сертификата, начнем с выбора .p12 [Нажмите на файл]</li>
+          <li>Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install".</li>
           <img src="https://github.com/viibbee/Info/blob/main/scarlet5.png?raw=true" alt="Шаг 5" style="width:100%; border-radius:8px; margin-top:10px;">
-
-          <li>6. Файлы устройства откроются автоматически, остается лишь выбрать последний файл для импорта сертификата .mobileprovision [Нажмите на файл]</li>
-          <img src="https://github.com/viibbee/Info/blob/main/scarlet6.png?raw=true" alt="Шаг 6" style="width:100%; border-radius:8px; margin-top:10px;">
-
-          <li>Введите пароль от сертификата и нажмите "Import"</li>
-          <img src="https://github.com/viibbee/Info/blob/main/scarlet7.png?raw=true" alt="Шаг 7" style="width:100%; border-radius:8px; margin-top:10px;">
-
-            <liНажмите на импортированный сертификат, чтобы кружок слева от названия сертификата был зеленого цвета</li>
-          <img src="https://github.com/viibbee/Info/blob/main/scarlet8.png?raw=true" alt="Шаг 8" style="width:100%; border-radius:8px; margin-top:10px;">
         </ol>
       `;
     } else if (type === 'gbox') {
