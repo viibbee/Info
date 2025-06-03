@@ -76,38 +76,32 @@
       transform: scale(1.05);
     }
 
-    .video {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 */
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .video iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
+    .icon-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     .icon {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       background-color: #ff4d4d;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      margin-top: 20px;
       transition: transform 0.3s ease;
     }
 
     .icon:hover {
       transform: scale(1.1);
+    }
+
+    .icon img {
+      width: 50px;
+      height: 50px;
     }
 
     .modal {
@@ -192,35 +186,19 @@
     </div>
   </div>
 
-  <h1>Видеоинструкции по установке</h1>
-  <div class="section installers">
-    <div class="card">
-      <h2>Gbox</h2>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/jtnm08bjST0" allowfullscreen></iframe>
-      </div>
-      <div class="icon" onclick="openModal('gbox')">G</div>
+  <h1>Иконки Установщиков</h1>
+  <div class="icon-container">
+    <div class="icon" onclick="openModal('gbox')">
+      <img src="path-to-your-icons/gbox-logo.png" alt="Gbox">
     </div>
-    <div class="card">
-      <h2>ESign</h2>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/eu0wZI5zBvc" allowfullscreen></iframe>
-      </div>
-      <div class="icon" onclick="openModal('esign')">E</div>
+    <div class="icon" onclick="openModal('esign')">
+      <img src="path-to-your-icons/esign-logo.png" alt="ESign">
     </div>
-    <div class="card">
-      <h2>Feather</h2>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/JEKi_561kVs" allowfullscreen></iframe>
-      </div>
-      <div class="icon" onclick="openModal('feather')">F</div>
+    <div class="icon" onclick="openModal('feather')">
+      <img src="path-to-your-icons/feather-logo.png" alt="Feather">
     </div>
-    <div class="card">
-      <h2>Scarlet</h2>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/uvnmvGcVOZ4" allowfullscreen></iframe>
-      </div>
-      <div class="icon" onclick="openModal('scarlet')">S</div>
+    <div class="icon" onclick="openModal('scarlet')">
+      <img src="path-to-your-icons/scarlet-logo.png" alt="Scarlet">
     </div>
   </div>
 
@@ -229,9 +207,10 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('gbox')">X</button>
       <h2>Инструкция для Gbox</h2>
-      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
-      <img src="path-to-your-image/gbox.jpg" alt="Gbox инструкция">
-      <p>Пошаговая инструкция...</p>
+      <p>Пошаговая инструкция для использования Gbox:</p>
+      <img src="path-to-your-images/gbox-instruction1.jpg" alt="Gbox инструкция 1">
+      <img src="path-to-your-images/gbox-instruction2.jpg" alt="Gbox инструкция 2">
+      <p>Дополнительные детали...</p>
     </div>
   </div>
 
@@ -240,9 +219,10 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('esign')">X</button>
       <h2>Инструкция для ESign</h2>
-      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
-      <img src="path-to-your-image/esign.jpg" alt="ESign инструкция">
-      <p>Пошаговая инструкция...</p>
+      <p>Пошаговая инструкция для использования ESign:</p>
+      <img src="path-to-your-images/esign-instruction1.jpg" alt="ESign инструкция 1">
+      <img src="path-to-your-images/esign-instruction2.jpg" alt="ESign инструкция 2">
+      <p>Дополнительные детали...</p>
     </div>
   </div>
 
@@ -251,9 +231,10 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('feather')">X</button>
       <h2>Инструкция для Feather</h2>
-      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
-      <img src="path-to-your-image/feather.jpg" alt="Feather инструкция">
-      <p>Пошаговая инструкция...</p>
+      <p>Пошаговая инструкция для использования Feather:</p>
+      <img src="path-to-your-images/feather-instruction1.jpg" alt="Feather инструкция 1">
+      <img src="path-to-your-images/feather-instruction2.jpg" alt="Feather инструкция 2">
+      <p>Дополнительные детали...</p>
     </div>
   </div>
 
@@ -262,9 +243,10 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('scarlet')">X</button>
       <h2>Инструкция для Scarlet</h2>
-      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
-      <img src="path-to-your-image/scarlet.jpg" alt="Scarlet инструкция">
-      <p>Пошаговая инструкция...</p>
+      <p>Пошаговая инструкция для использования Scarlet:</p>
+      <img src="path-to-your-images/scarlet-instruction1.jpg" alt="Scarlet инструкция 1">
+      <img src="path-to-your-images/scarlet-instruction2.jpg" alt="Scarlet инструкция 2">
+      <p>Дополнительные детали...</p>
     </div>
   </div>
 
