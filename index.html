@@ -208,46 +208,64 @@
   </article>
 
 </main>
+<h2 style="text-align:center; font-size: 1.2rem; margin-top: 20px; color: #e3f2fd; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Инструкция по установке сертификата</h2>
+<div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0;">
+  <div onclick="openModal('scarlet')" style="cursor: pointer; text-align: center;">
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/scarlet.png" alt="Scarlet" style="width:60px; height:60px;"><br>
+    <span>Scarlet</span>
+  </div>
+  <div onclick="openModal('gbox')" style="cursor: pointer; text-align: center;">
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/gbox.png" alt="Gbox" style="width:60px; height:60px;"><br>
+    <span>Gbox</span>
+  </div>
+  <div onclick="openModal('esign')" style="cursor: pointer; text-align: center;">
+    <img src="https://raw.githubusercontent.com/viibbee/Info/main/icons/esign.png" alt="ESign" style="width:60px; height:60px;"><br>
+    <span>ESign</span>
+  </div>
+</div>
+
 <!-- Модальное окно -->
-<div id="instructionModal" class="modal" onclick="closeModal(event)">
-  <div class="modal-content" id="modalContent">
-    <span class="modal-close" onclick="closeModal(event)">Закрыть</span>
+<div id="instructionModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center;">
+  <div style="background:#fff; color:#000; max-width:90%; max-height:90%; overflow-y:auto; padding:20px; border-radius:16px; position:relative;">
+    <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; font-size:24px; font-weight:bold; cursor:pointer;">×</span>
+    <div id="instructionContent">
+      <!-- Сюда будет подставляться контент -->
+    </div>
   </div>
 </div>
 
 <script>
   function openModal(type) {
-    const modalText = {
-      scarlet: `
-        <h3>Подпись и установка приложений в Scarlet</h3>
-        <p>1. Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке "Installed".</p>
-        <p>2. Нажмите на кнопку сверху справа.</p>
-        <p>3. Выберите файл IPA, дождитесь окончания подписи.</p>
-        <p>4. Подтвердите установку, когда появится окно.</p>
-      `,
-      gbox: `
-        <h3>Установка приложений через Gbox</h3>
-        <p>1. Нажмите кнопку "Gbox", затем "Установить".</p>
-        <p>2. Подтвердите установку в Safari.</p>
-        <p>3. Включите "Режим разработчика" в настройках и перезагрузите устройство.</p>
-        <p>4. Откройте Gbox, импортируйте сертификат и подпишите IPA.</p>
-      `,
-      esign: `
-        <h3>Подпись и установка через ESign</h3>
-        <p>1. Скачайте и установите ESign.</p>
-        <p>2. Импортируйте ваш сертификат через раздел "Сертификаты".</p>
-        <p>3. Выберите файл IPA, подпишите и установите его.</p>
-      `
-    };
+    const modal = document.getElementById('instructionModal');
+    const content = document.getElementById('instructionContent');
+    let html = '';
 
-    document.getElementById('modalContent').innerHTML = modalText[type] + '<span class="modal-close" onclick="closeModal(event)">Закрыть</span>';
-    document.getElementById('instructionModal').style.display = 'block';
+    if (type === 'scarlet') {
+      html = `
+        <h2>Инструкция: Scarlet</h2>
+        <p>1. Откройте Scarlet.<br>2. Найдите нужное IPA-приложение.<br>3. Нажмите "Install" и следуйте инструкциям на экране.</p>
+        <img src="https://raw.githubusercontent.com/viibbee/Info/main/screens/scarlet_step1.jpg" alt="step 1" style="width:100%; border-radius:8px; margin-top:10px;">
+      `;
+    } else if (type === 'gbox') {
+      html = `
+        <h2>Инструкция: Gbox</h2>
+        <p>1. Откройте Gbox через Safari.<br>2. Установите профиль.<br>3. Включите режим разработчика в Настройках.</p>
+        <img src="https://raw.githubusercontent.com/viibbee/Info/main/screens/gbox_step1.jpg" alt="step 1" style="width:100%; border-radius:8px; margin-top:10px;">
+      `;
+    } else if (type === 'esign') {
+      html = `
+        <h2>Инструкция: ESign</h2>
+        <p>1. Откройте ESign и нажмите "Импортировать сертификат".<br>2. Выберите два файла сертификата.<br>3. Перейдите в "Файлы", выберите IPA и нажмите "Подписать".</p>
+        <img src="https://raw.githubusercontent.com/viibbee/Info/main/screens/esign_step1.jpg" alt="step 1" style="width:100%; border-radius:8px; margin-top:10px;">
+      `;
+    }
+
+    content.innerHTML = html;
+    modal.style.display = 'flex';
   }
 
-  function closeModal(event) {
-    if (event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
-      document.getElementById('instructionModal').style.display = 'none';
-    }
+  function closeModal() {
+    document.getElementById('instructionModal').style.display = 'none';
   }
 </script>
 
