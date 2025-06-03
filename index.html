@@ -208,6 +208,12 @@
   </article>
 
 </main>
+<!-- Модальное окно -->
+<div id="instructionModal" class="modal" onclick="closeModal(event)">
+  <div class="modal-content" id="modalContent">
+    <span class="modal-close" onclick="closeModal(event)">Закрыть</span>
+  </div>
+</div>
 
 <script>
   function openModal(type) {
@@ -215,40 +221,33 @@
       scarlet: `
         <h3>Подпись и установка приложений в Scarlet</h3>
         <p>1. Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке "Installed".</p>
-        <img src="scarlet1.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <p>2. Оставшись на данной вкладке, нажмите на кнопку, которая располагается сверху справа.</p>
-        <img src="scarlet2.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <p>3. Файлы устройства откроются автоматически, остается лишь выбрать файл приложения [Нажмите на файл]</p>
-        <img src="scarlet3.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <p>4. Дождитесь окончания подписи файла.</p>
-        <img src="scarlet4.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
-        <p>5. Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install".</p>
-        <img src="scarlet5.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+        <p>2. Нажмите на кнопку сверху справа.</p>
+        <p>3. Выберите файл IPA, дождитесь окончания подписи.</p>
+        <p>4. Подтвердите установку, когда появится окно.</p>
       `,
       gbox: `
         <h3>Установка приложений через Gbox</h3>
-        <p>1. Нажмите кнопку Gbox затем "Установить".</p>
-        <p>2. В Safari подтвердите установку.</p>
-        <p>3. Перейдите в "Настройки > Конфиденциальность > Режим разработчика".</p>
-        <p>4. Включите режим, перезагрузите устройство.</p>
-        <p>5. Откройте Gbox, примите условия.</p>
-        <p>6. Импортируйте сертификаты и подпишите IPA файл.</p>
+        <p>1. Нажмите кнопку "Gbox", затем "Установить".</p>
+        <p>2. Подтвердите установку в Safari.</p>
+        <p>3. Включите "Режим разработчика" в настройках и перезагрузите устройство.</p>
+        <p>4. Откройте Gbox, импортируйте сертификат и подпишите IPA.</p>
       `,
       esign: `
         <h3>Подпись и установка через ESign</h3>
-        <p>1. Скачайте ESign и установите его.</p>
-        <p>2. Примите пользовательское соглашение.</p>
-        <p>3. Импортируйте оба файла сертификата в настройках.</p>
-        <p>4. В разделе "Файлы" выберите IPA, подпишите и установите.</p>
+        <p>1. Скачайте и установите ESign.</p>
+        <p>2. Импортируйте ваш сертификат через раздел "Сертификаты".</p>
+        <p>3. Выберите файл IPA, подпишите и установите его.</p>
       `
     };
 
-    document.getElementById("modalText").innerHTML = modalText[type] || "<p>Инструкция недоступна.</p>";
-    document.getElementById("modalOverlay").style.display = "flex";
+    document.getElementById('modalContent').innerHTML = modalText[type] + '<span class="modal-close" onclick="closeModal(event)">Закрыть</span>';
+    document.getElementById('instructionModal').style.display = 'block';
   }
 
-  function closeModal() {
-    document.getElementById("modalOverlay").style.display = "none";
+  function closeModal(event) {
+    if (event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
+      document.getElementById('instructionModal').style.display = 'none';
+    }
   }
 </script>
 
