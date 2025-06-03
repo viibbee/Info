@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Сертификаты для IPA</title>
   <style>
+    /* --- Общий стиль --- */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       background: linear-gradient(135deg, #7ec8f5, #4a90e2);
       color: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       box-sizing: border-box;
-      padding-top: 70px;
+      padding-top: 70px; /* Отступ под шапку */
     }
 
+    /* --- Шапка --- */
     header {
       position: fixed;
       top: 0;
@@ -58,18 +61,21 @@
       white-space: nowrap;
     }
 
+    /* --- Текст под шапкой --- */
     .intro-text {
-      max-width: 400px;
-      margin: 1px auto 30px auto;
-      padding: 0 15px;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: #f0f9ff;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-      user-select: text;
-      white-space: pre-line;
-    }
+  max-width: 400px;
+  margin: 1px auto 30px auto;
+  padding: 0 15px;
+  font-size: 1.15rem; /* увеличен размер */
+  line-height: 1.6;
+  color: #f0f9ff; /* более светлый, чуть ярче */
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.7); /* легкая тень для контраста */
+  user-select: text;
+  white-space: pre-line; /* чтобы переносы строк работали */
+}
 
+    /* --- Контейнер сертификатов --- */
     main.container {
       width: 100%;
       max-width: 350px;
@@ -80,18 +86,22 @@
       padding-bottom: 40px;
     }
 
+    /* --- Карточки --- */
     .card {
       background: linear-gradient(145deg, #2980b9, #3f8dd1);
       border-radius: 24px;
       padding: 15px 20px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3),
-                  inset 0 2px 6px rgba(255, 255, 255, 0.15),
-                  inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.3),
+        inset 0 2px 6px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       height: 220px;
       box-sizing: border-box;
     }
@@ -115,6 +125,7 @@
       overflow-y: auto;
     }
 
+    /* --- Кнопки --- */
     .buy-button {
       display: block;
       width: 100%;
@@ -136,83 +147,6 @@
       box-shadow: 0 4px 8px rgba(0, 90, 190, 0.7);
       transform: translateY(2px);
     }
-
-    /* Инструкции */
-    .instruction-header {
-      text-align: center;
-      font-size: 1.4rem;
-      margin: 30px 0 15px;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-
-    .icons-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .icon-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .icon-box img {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    .icon-box span {
-      margin-top: 8px;
-      color: #e3f2fd;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    .icon-box:hover {
-      transform: scale(1.05);
-    }
-
-    /* Модальные окна */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.7);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 16px;
-      max-width: 400px;
-      color: #333;
-      font-size: 1rem;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: #000;
-    }
   </style>
 </head>
 <body>
@@ -231,72 +165,49 @@
 </div>
 
 <main class="container">
-  <!-- СЕРТИФИКАТЫ -->
-  <!-- (карточки как в твоем коде, оставлены без изменений) -->
-  <!-- ... вставлены сюда ... -->
+
+  <article class="card" tabindex="0">
+    <h2>Обычный сертификат — 799₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–4 дня</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Моментальный сертификат — 1399₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–5 минут</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Сертификат iPad — 699₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1 минута – 4 дня</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
+  <article class="card" tabindex="0">
+    <h2>Супермоментальный сертификат — 1699₽</h2>
+    <ul>
+      <li>Сертификат на 1 год</li>
+      <li>Срок изготовления 1–5 минут</li>
+      <li>Снимает бан с UDID</li>
+      <li>Подходит для всех IPA</li>
+    </ul>
+    <a class="buy-button" href="https://t.me/m/bBsAYPUgZTJi" target="_blank" rel="noopener noreferrer">Купить</a>
+  </article>
+
 </main>
-
-<!-- Инструкции -->
-<h2 class="instruction-header">Инструкция по установке сертификата</h2>
-<div class="icons-row">
-  <div class="icon-box" onclick="openModal(1)">
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="iOS" />
-    <span>Установка на iOS</span>
-  </div>
-  <div class="icon-box" onclick="openModal(2)">
-    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Настройки" />
-    <span>Настройки профиля</span>
-  </div>
-  <div class="icon-box" onclick="openModal(3)">
-    <img src="https://cdn-icons-png.flaticon.com/512/545/545705.png" alt="Safari" />
-    <span>Через Safari</span>
-  </div>
-</div>
-
-<!-- Модальные окна -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(1)">&times;</span>
-    <h3>Установка на iOS</h3>
-    <p>Скачайте профиль, откройте его в "Настройках" → "Установить". После установки перезагрузите устройство.</p>
-  </div>
-</div>
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(2)">&times;</span>
-    <h3>Настройки профиля</h3>
-    <p>Перейдите в "Настройки" → "Профили" или "VPN и управление устройством", затем выберите нужный профиль и нажмите "Установить".</p>
-  </div>
-</div>
-
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(3)">&times;</span>
-    <h3>Установка через Safari</h3>
-    <p>Откройте ссылку на сертификат в Safari, подтвердите установку. После — настройте профиль в параметрах устройства.</p>
-  </div>
-</div>
-
-<script>
-  function openModal(id) {
-    document.getElementById('modal' + id).style.display = 'block';
-  }
-
-  function closeModal(id) {
-    document.getElementById('modal' + id).style.display = 'none';
-  }
-
-  // Закрытие при клике вне окна
-  window.onclick = function(event) {
-    for (let i = 1; i <= 3; i++) {
-      const modal = document.getElementById('modal' + i);
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  };
-</script>
 
 </body>
 </html>
