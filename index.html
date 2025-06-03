@@ -93,6 +93,67 @@
       border-radius: 10px;
     }
 
+    .icon {
+      width: 50px;
+      height: 50px;
+      background-color: #ff4d4d;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #121212;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      overflow-y: auto;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: crimson;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .close-btn:hover {
+      background: #ff4d4d;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 1.5em;
@@ -138,26 +199,84 @@
       <div class="video">
         <iframe src="https://www.youtube.com/embed/jtnm08bjST0" allowfullscreen></iframe>
       </div>
+      <div class="icon" onclick="openModal('gbox')">G</div>
     </div>
     <div class="card">
       <h2>ESign</h2>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/eu0wZI5zBvc" allowfullscreen></iframe>
       </div>
+      <div class="icon" onclick="openModal('esign')">E</div>
     </div>
     <div class="card">
       <h2>Feather</h2>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/JEKi_561kVs" allowfullscreen></iframe>
       </div>
+      <div class="icon" onclick="openModal('feather')">F</div>
     </div>
     <div class="card">
       <h2>Scarlet</h2>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/uvnmvGcVOZ4" allowfullscreen></iframe>
       </div>
+      <div class="icon" onclick="openModal('scarlet')">S</div>
     </div>
   </div>
+
+  <!-- Modal for Gbox -->
+  <div id="gbox-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('gbox')">X</button>
+      <h2>Инструкция для Gbox</h2>
+      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
+      <img src="path-to-your-image/gbox.jpg" alt="Gbox инструкция">
+      <p>Пошаговая инструкция...</p>
+    </div>
+  </div>
+
+  <!-- Modal for ESign -->
+  <div id="esign-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('esign')">X</button>
+      <h2>Инструкция для ESign</h2>
+      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
+      <img src="path-to-your-image/esign.jpg" alt="ESign инструкция">
+      <p>Пошаговая инструкция...</p>
+    </div>
+  </div>
+
+  <!-- Modal for Feather -->
+  <div id="feather-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('feather')">X</button>
+      <h2>Инструкция для Feather</h2>
+      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
+      <img src="path-to-your-image/feather.jpg" alt="Feather инструкция">
+      <p>Пошаговая инструкция...</p>
+    </div>
+  </div>
+
+  <!-- Modal for Scarlet -->
+  <div id="scarlet-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('scarlet')">X</button>
+      <h2>Инструкция для Scarlet</h2>
+      <p>Следуйте инструкциям на видео. Вот дополнение:</p>
+      <img src="path-to-your-image/scarlet.jpg" alt="Scarlet инструкция">
+      <p>Пошаговая инструкция...</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id + '-modal').style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id + '-modal').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
