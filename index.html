@@ -243,14 +243,25 @@
 
     let html = '';
 
-    if (type === 'scarlet') {
-      html = `
-        <h3>Установка через Scarlet</h3>
-        <p>1. Откройте приложение Scarlet.<br>
-        2. Импортируйте сертификат через настройки.<br>
-        3. Подпишите ваш IPA-файл и установите.</p>
-        <img src="screenshot1.png" style="width:100%; border-radius:12px; margin-top:10px;">
-      `;
+   if (type === 'scarlet') {
+  html = `
+    <h3>Подпись и установка приложений в Scarlet</h3>
+    <p>1. Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке "Installed".</p>
+    <img src="scarlet1.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+    
+    <p>2. Оставшись на данной вкладке, нажмите на кнопку, которая располагается сверху справа.</p>
+    <img src="scarlet2.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+    
+    <p>3. Файлы устройства откроются автоматически, остается лишь выбрать файл приложения [Нажмите на файл]</p>
+    <img src="scarlet3.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+    
+    <p>4. Дождитесь окончания подписи файла.</p>
+    <img src="scarlet4.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+    
+    <p>5. Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install".</p>
+    <img src="scarlet5.png" style="width:100%; border-radius:12px; margin-bottom:16px;">
+  `;
+}
     } else if (type === 'gbox') {
       html = `
         <h3>Установка через Gbox</h3>
