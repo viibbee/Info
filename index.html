@@ -147,19 +147,32 @@
       transform: translateY(2px);
     }
 
-    /* --- Кнопка инструкции --- */
+    /* --- Новая зелёная кнопка инструкции --- */
     #mainInstructionBtn {
       display: block;
+      width: 100%;
+      max-width: 350px;
       margin: 20px auto;
-      font-size: 1.2rem;
-      color: #e3f2fd;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-      background: none;
-      border: none;
+      text-align: center;
+      background: linear-gradient(90deg, #4CAF50 0%, #388E3C 100%);
+      color: white;
+      padding: 14px 0;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(56, 142, 60, 0.5);
       cursor: pointer;
       user-select: none;
+      border: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
+    #mainInstructionBtn:active {
+      background: #2E7D32;
+      box-shadow: 0 4px 8px rgba(46, 125, 50, 0.7);
+      transform: translateY(2px);
+    }
   </style>
 </head>
 <body>
@@ -222,7 +235,7 @@
 
 </main>
 
-<!-- Новая кнопка-инструкция -->
+<!-- Новая зеленая кнопка инструкции -->
 <button id="mainInstructionBtn">Инструкция по установке сертификата</button>
 
 <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0;">
@@ -262,28 +275,20 @@
         <h3>Пункт 1: Как получить сертификат в боте.</h3>
         <ol>
           <li>Отправляете /start боту.</li>
-          
           <li>Нажимаете на кнопку "Проверить UDID".</li>
-         
           <li>После сообщения "Отправьте UDID", вам нужно отправить свой UDID, который вы указывали при оплате сертификата.</li>
-          
           <li>Нажимаете на кнопку "Получить сертификат [Имя вашего сертификата]".</li>
-          
           <li>Бот пришлет вам два файла вашего сертификата - P12 и Mobileprovision, а также ссылки для быстрой установки вашего сертификата.</li>
         </ol>
 
         <h3>Пункт 2: Как сохранить сертификат на устройство.</h3>
         <ol>
           <li>Когда бот прислал вам два файла сертификата, то вам нужно нажать на один из них.</li>
-<img src="https://github.com/viibbee/Info/blob/main/cert1.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
-
+          <img src="https://github.com/viibbee/Info/blob/main/cert1.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
           <li>В открывшемся окне нажмите на кнопку, расположенную сверху.</li>
           <img src="https://github.com/viibbee/Info/blob/main/cert2.png?raw=true" alt="Шаг 2" style="width:100%; border-radius:8px; margin-top:10px;">
-          
           <li>У вас снова откроется окно, в нем выберите кнопку "Сохранить в файлы".</li>
-          
           <li>Выберите место для сохранения сертификата.</li>
-           
           <li>Нажмите на кнопку "Сохранить" слева вверху.</li>
           <li>Повторите для второго файла сертификата.</li>
         </ol>
@@ -291,7 +296,7 @@
         <h3>Пункт 3: Как скачать Scarlet/Esign/GBox через бота.</h3>
         <ol>
           <li>После отправки UDID бот выдает ссылки на установщики приложений.</li>
-           <img src="https://github.com/viibbee/Info/blob/main/cert3.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
+          <img src="https://github.com/viibbee/Info/blob/main/cert3.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
           <li>Нажмите на выбранный установщик.</li>
           <li>Запустится мини-приложение, нажмите "Установить /Install".</li>
           <li>Далее вас перенесет в Safari.</li>
@@ -304,7 +309,7 @@
 
         <h3>Пункт 4: Требуется режим разработчика.</h3>
         <ol>
-        <img src="https://github.com/viibbee/Info/blob/main/cert5.png?raw=true" alt="Шаг 5" style="width:100%; border-radius:8px; margin-top:10px;">
+          <img src="https://github.com/viibbee/Info/blob/main/cert5.png?raw=true" alt="Шаг 5" style="width:100%; border-radius:8px; margin-top:10px;">
           <li>Откройте настройки устройства.</li>
           <li>Найдите раздел "Конфиденциальность и безопасность".</li>
           <li>Пролистайте вниз и выберите "Режим разработчика".</li>
