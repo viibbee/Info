@@ -173,6 +173,19 @@
       box-shadow: 0 4px 8px rgba(46, 125, 50, 0.7);
       transform: translateY(2px);
     }
+    
+    /* --- СТИЛЬ ДЛЯ НОВОГО ЗАГОЛОВКА --- */
+    .section-title {
+        text-align: center;
+        max-width: 400px;
+        margin: 40px auto 20px auto;
+        padding: 0 15px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e3f2fd;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+        user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -235,31 +248,45 @@
 
 </main>
 
-<!-- Новая зеленая кнопка инструкции -->
 <button id="mainInstructionBtn">Инструкция по установке сертификата</button>
 
 <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0;">
-  <div onclick="openModal('scarlet')" style="cursor: pointer; text-align: center;">
-    <img src="https://github.com/viibbee/Info/blob/main/scarleticon.JPG?raw=true" alt="Scarlet" style="width:60px; height:60px;"><br>
+  <div onclick="openModal('scarlet')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/scarleticon.JPG?raw=true" alt="Scarlet" style="width:60px; height:60px; border-radius: 12px;"><br>
     <span>Scarlet</span>
   </div>
-  <div onclick="openModal('gbox')" style="cursor: pointer; text-align: center;">
-    <img src="https://github.com/viibbee/Info/blob/main/gboxicon.JPG?raw=true" alt="Gbox" style="width:60px; height:60px;"><br>
+  <div onclick="openModal('gbox')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/gboxicon.JPG?raw=true" alt="Gbox" style="width:60px; height:60px; border-radius: 12px;"><br>
     <span>Gbox</span>
   </div>
-  <div onclick="openModal('esign')" style="cursor: pointer; text-align: center;">
-    <img src="https://github.com/viibbee/Info/blob/main/esignicon.JPG?raw=true" alt="ESign" style="width:60px; height:60px;"><br>
+  <div onclick="openModal('esign')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/esignicon.JPG?raw=true" alt="ESign" style="width:60px; height:60px; border-radius: 12px;"><br>
     <span>ESign</span>
   </div>
 </div>
 
-<!-- Модальное окно -->
+<h2 class="section-title">Инструкция по Установке приложений</h2>
+
+<div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0;">
+  <div onclick="openModal('scarlet-install')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/scarleticon.JPG?raw=true" alt="Scarlet" style="width:60px; height:60px; border-radius: 12px;"><br>
+    <span>Scarlet</span>
+  </div>
+  <div onclick="openModal('gbox-install')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/gboxicon.JPG?raw=true" alt="Gbox" style="width:60px; height:60px; border-radius: 12px;"><br>
+    <span>Gbox</span>
+  </div>
+  <div onclick="openModal('esign-install')" style="cursor: pointer; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+    <img src="https://github.com/viibbee/Info/blob/main/esignicon.JPG?raw=true" alt="ESign" style="width:60px; height:60px; border-radius: 12px;"><br>
+    <span>ESign</span>
+  </div>
+</div>
+
 <div id="instructionModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center;">
   <div style="background:#fff; color:#000; max-width:90%; max-height:90%; overflow-y:auto; padding:20px; border-radius:16px; position:relative;">
     <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; font-size:24px; font-weight:bold; cursor:pointer;">×</span>
     <div id="instructionContent">
-      <!-- Сюда будет подставляться контент -->
-    </div>
+      </div>
   </div>
 </div>
 
@@ -342,7 +369,7 @@
       `;
     } else if (type === 'gbox') {
       html = `
-        <h2>Инструкция: GBox</h2>
+        <h2>Установка сертификата в GBox</h2>
         <ol>
           <li>Зайдите в GBox и убедитесь, что вы находитесь на вкладке "Settings".</li>
           <img src="https://github.com/viibbee/Info/blob/main/gbox1.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
@@ -370,7 +397,7 @@
       `;
     } else if (type === 'esign') {
       html = `
-        <h2>Инструкция: ESign</h2>
+        <h2>Установка сертификата в ESign</h2>
         <ol>
           <li>Зайдите в ESign и убедитесь, что вы находитесь на вкладке "File".</li>
           <img src="https://github.com/viibbee/Info/blob/main/esign1.png?raw=true" alt="Шаг 1" style="width:100%; border-radius:8px; margin-top:10px;">
@@ -400,6 +427,54 @@
           <img src="https://github.com/viibbee/Info/blob/main/esign13.png?raw=true" alt="Шаг 13" style="width:100%; border-radius:8px; margin-top:10px;">
         </ol>
       `;
+    } 
+    
+    // ========================================================== //
+    // =========== НОВЫЕ ИНСТРУКЦИИ ДЛЯ УСТАНОВКИ IPA =========== //
+    // ========================================================== //
+    
+    else if (type === 'scarlet-install') {
+      html = `
+        <h2>Установка приложений через Scarlet</h2>
+        <ol>
+          <li>Зайдите в Scarlet и убедитесь, что вы находитесь на вкладке "Installed"</li>
+          <li>Оставшись на данной вкладке, нажмите на кнопку, которая располагается сверху справа</li>
+          <li>Файлы устройства откроются автоматически, остается лишь выбрать файл приложения [Нажмите на файл]</li>
+          <li>Дождитесь окончания подписи файла</li>
+          <li>Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install"</li>
+        </ol>
+      `;
+    } else if (type === 'gbox-install') {
+      html = `
+        <h2>Установка приложений через GBox</h2>
+        <ol>
+          <li>Зайдите в GBox и убедитесь, что вы находитесь на вкладке "Files"</li>
+          <li>Оставшись на данной вкладке, нажмите на кнопку менеджера файлов сверху справа</li>
+          <li>Файлы устройства откроются автоматически, остается лишь выбрать файл приложения [Нажмите на файл]</li>
+          <li>Данный файл появится во вкладке "Files", нажмите на приложение, которое вы хотите подписать и установить на ваше устройство</li>
+          <li>В появившемся cписке нажмите на "Sign"</li>
+          <li>В появившемся окне для подписи файла нажмите на "Sign"</li>
+          <li>После успешной подписи приложения появится окно с предупреждением о том, что необходимо удалить оригинал приложения перед установкой, нажмите на "Install"</li>
+          <li>Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install"</li>
+        </ol>
+      `;
+    } else if (type === 'esign-install') {
+      html = `
+        <h2>Установка приложений через ESign</h2>
+        <ol>
+          <li>Зайдите в ESign и убедитесь, что вы находитесь на вкладке "File"</li>
+          <li>Оставшись на данной вкладке, нажмите на "•••" сверху справа</li>
+          <li>В появившемся списке нажмите на "Import"</li>
+          <li>Файлы устройства откроются автоматически, остается лишь выбрать файл приложения [Нажмите на файл]</li>
+          <li>После выбора необходимого файла приложения, появится окно с предложением импортировать приложение в библиотеку, нажмите на "Import"</li>
+          <li>Перейдите на вкладку "Apps"</li>
+          <li>Нажмите на приложение, которое вы хотите подписать и установить на ваше устройство</li>
+          <li>В появившемся списке нажмите на "Signature"</li>
+          <li>В появившемся окне нажмите на "Signature"</li>
+          <li>Дождитесь окончания подписи файла и нажмите на "Install"</li>
+          <li>Появится окно с предложением по установке приложения на ваше устройство, нажмите на "Install"</li>
+        </ol>
+      `;
     }
 
     content.innerHTML = html;
@@ -419,7 +494,6 @@
 </script>
 
 
-<!-- Блок с Telegram-приглашением -->
 <section style="background: #111; color: white; text-align: center; padding: 40px 20px; margin-top: 40px;">
   <h2 style="font-size: 1.8rem; margin-bottom: 20px;">
     Узнавайте новости<br>и получайте бесплатный сертификат
